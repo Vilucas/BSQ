@@ -5,6 +5,7 @@ FLAGS = # -Wall -Wextra -Werror
 SRC = main.c \
 	get_next_line.c \
 	debug.c \
+	algo.c \
 	
 INCLUDE = main.h  \
 	get_next_line.h \

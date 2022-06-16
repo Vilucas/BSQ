@@ -4,7 +4,7 @@
 #define READ_PACE 1
 
 
-bool get_map(char *av, int ***map)
+bool get_map(char *av, int ***map, t_data *data)
 {
     int         fd;
     int         byteRead;
@@ -16,6 +16,7 @@ bool get_map(char *av, int ***map)
     get_next_line(fd, &line);
     dim = atoi(line);
     *map = malloc(sizeof(int*) * dim + 1);
+    data->dim = dim;
 
     for (int i = 0; i < dim; i++)
     {
@@ -27,14 +28,20 @@ bool get_map(char *av, int ***map)
         }
     }
     printMap(*map, dim);
-    printf("%d\n%s\n", dim, line);
+    return true;
 }
 
 int main(int ac, char **av)
 {
     int **map;
+    t_data data;
+
+    memset(&data, NULL, sizeof(data));
+
+
     if (ac != 2 || !av[1] || !av[1][0])
         return -1;
-    get_map(av[1], &map);
+    get_map(av[1], &map, &data);
+    algo(map, data);
     return (0);
 }
