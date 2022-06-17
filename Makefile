@@ -3,12 +3,11 @@ NAME = BSQ
 FLAGS = # -Wall -Wextra -Werror
 
 SRC = main.c \
-	get_next_line.c \
+	readLine.c \
 	debug.c \
 	algo.c \
 	
 INCLUDE = main.h  \
-	get_next_line.h \
 	debug.h \
 			
 SRCPATH = src
