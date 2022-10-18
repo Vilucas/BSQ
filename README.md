@@ -13,6 +13,6 @@ We store the position of the largest square we found and then print the new map.
 ``` make ; perl mapGenerator.pl 100 100 5 > map1 ``` this will build the project and create a 100x100 matrix with an obstacle density of 5 by row
 
 # launch
-```./BSQ map1 > result1 ; cat result1``` I redirect it into a file as printing on the terminal is very very slow
+```./BSQ map1 > result1 ; cat result1``` I redirect it into a file to avoid slowly printing it 
 
 # This project has educative purposes in the scope of my work at European Leadership University
